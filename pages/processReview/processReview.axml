@@ -1,0 +1,58 @@
+<view>
+  <form class="review_form" onSubmit="review_submit" onReset="review_reset">
+    <view class="wrap">
+      <!--<view class="search_item">
+        <text>长度</text>
+        <input type="number" name="Length" placeholder="" />
+      </view>
+      <view class="search_item">
+        <text>宽度</text>
+        <input type="number" name="Width" placeholder="" />
+      </view>
+      <view class="search_item">
+        <text>高度</text>
+        <input type="number" name="Height" placeholder="" />
+      </view>
+      <view class="search_item">
+        <text>米数</text>
+        <input type="number" name="Metre" placeholder="" />
+      </view>
+      <view class="search_item">
+        <text>件数</text>
+        <input type="number" name="Number" placeholder="" value="0" disabled />
+      </view>
+      <view class="search_item">
+        <text>重量</text>
+        <input type="number" name="Weight" placeholder="" />
+      </view>
+      <view class="search_item">
+        <text>体积</text>
+        <input type="number" name="Volume" placeholder="" />
+      </view>
+      <view class="search_item">
+        <text>平方</text>
+        <input type="number" name="Area" placeholder="" />
+      </view>
+      <view class="search_item">
+        <text>单价</text>
+        <input type="number" name="CostPrice" placeholder="" />
+      </view>
+      <view class="search_item">
+        <text>总价</text>
+        <input type="number" name="Total" placeholder="" />
+      </view> -->
+      <view class="search_item" a:for="{{objData}}">
+        <text>{{objJson[item.key]}}</text>
+        <input type="number" name="{{item.key}}" value="{{item.value}}" placeholder="" />
+      </view>
+      <view class="search_item" a:for="{{otherData}}">
+        <text>{{item.key}}</text>
+        <input type="number" name="{{item.key}}" value="{{item.value}}" placeholder="" />
+      </view>
+    </view>
+    <view class="btn">
+      <button class="review_submit" formType="submit">确定</button>
+      <button formType="reset">重置</button>
+    </view>
+</form>
+</view>

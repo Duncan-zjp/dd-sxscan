@@ -1,0 +1,98 @@
+.buyCar{
+  width:100vw;
+  height:100vh;
+  background:#f7f7f7;
+  position:fixed;
+  top:0;
+}
+
+.car_list{
+  width:100%;
+  height:calc(100vh - 80rpx);
+}
+.car_list .item{
+  background:#fff;
+  margin-bottom:15rpx;
+  box-sizing:border-box;
+  padding:20rpx;
+  font-size:22rpx;
+  color:#4D4D4D;
+}
+.car_list .item .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.car_list .item .wrap_info{
+  display:flex;
+  align-items:center;
+  margin-right:10rpx;
+}
+.car_list .item .pic{
+  width:180rpx;
+  height:100rpx;
+  border-radius:10rpx;
+  border:1rpx solid #ccc;
+  margin-right:15rpx;
+}
+.car_list .item .pic image{
+  width:100%;
+  height:100%;
+}
+.car_list .item .wrap .content{
+  
+}
+.car_list .item .wrap .content view{
+  display:flex;
+  align-items:center;
+  margin-top:10rpx;
+}
+.car_list .item .wrap .content view:first-child{
+  margin-top:0;
+}
+.car_list .item .wrap .content .price{
+  color:#EE3B3B;
+}
+.car_list .item .wrap .content view input{
+  width:100rpx;
+  height:30rpx;
+  border:1rpx solid #ccc;
+}
+.car_list .item .delete{
+  color:#EE3B3B;
+  font-size:32rpx;
+}
+.car_list .other .oitem{
+  color:#919191;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:15rpx;
+}
+.car_list .other .num,.car_list .other .countPrice{
+  justify-content:flex-end;
+}
+.car_list .other .num input{
+  width:150rpx;
+  height:30rpx;
+  border:1rpx solid #ccc;
+  font-size:22rpx;
+}
+.car_list .other .oitem_info{
+  width:250rpx;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.car_list .other .countPrice text:last-child{
+  color:#EE3B3B;
+}
+
+
+.closeBuyCar{
+  width:100%;
+  height:80rpx;
+  position:absolute;
+  bottom:0;
+  font-size:28rpx;
+}

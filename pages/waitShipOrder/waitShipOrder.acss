@@ -1,0 +1,55 @@
+.orderList {
+  width: 750rpx;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+.orderList__main {
+  height: 100%;
+}
+
+.orderList__scrollView{
+  height: 100%;
+}
+
+.orderList__item{
+  width: 100%;
+  background-color: #fff;
+  margin: 20rpx 0;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.orderList__itemHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.orderList__itemContent{
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 24rpx;
+  padding: 10rpx 0;
+}
+
+.orderList__itemBottom{
+  border-top: 2rpx solid #f2f2f2;
+  display: flex;
+  align-items: center;
+  height: 50rpx;
+}
+
+.orderList__itemContent view{
+  display: flex;
+  align-items: center;
+}
+
+.iconfont{
+  margin-right: 10rpx;
+}

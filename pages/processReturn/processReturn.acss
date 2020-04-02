@@ -1,0 +1,25 @@
+.return_view{
+  width:100%;
+}
+
+.return_form .btn{
+  display:flex;
+  justify-content:center;
+  margin-top:20rpx;
+}
+.return_form .btn button{
+  width:200rpx;
+  height:60rpx;
+  line-height:60rpx;
+  text-align:center;
+  font-size:28rpx;
+  border-radius:20rpx;
+  margin:0 20rpx;
+}
+.return_submit{
+  background:#38adff;
+  color:#fff;
+}
+.return_form .item textarea{
+  height:300rpx;
+}

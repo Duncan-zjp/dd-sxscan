@@ -1,0 +1,94 @@
+<view class="createOrder page">
+  <form class="form" onSubmit="createOrder" onReset="removeCreateOrderData">
+    <view class="form_item">
+      <text>店铺昵称：</text>
+      <select class="selectItem" defaultValue="{{orderDataLocal ? orderDataLocal.店铺昵称 : ''}}" index="{{orderDataLocal ? orderDataLocal.店铺昵称index : 0}}" placeholder="请选择店铺" selectData="{{selectData.shop}}" labelKey="店铺昵称" onChange="shopchange" />
+      <!-- <input style="display:none" name="店铺昵称" value="{{shopValue}}" /> -->
+    </view>
+    <view class="form_item">
+      <text>配送方式：</text>
+      <select placeholder="请选择配送方式" defaultValue="{{orderDataLocal ? orderDataLocal.配送方式 : ''}}" index="{{orderDataLocal ? orderDataLocal.配送方式index : 0}}" selectData="{{selectData.ps}}" labelKey="配送名称" onChange="pschange" />
+      <!-- <input style="display:none" name="配送方式" value="{{psValue}}" /> -->
+    </view>
+    <view class="form_item">
+      <text>买家备注：</text>
+      <view><input value="{{orderDataLocal ? orderDataLocal.买家备注 : ''}}" name="买家备注" placeholder="请输入买家备注" /></view>
+    </view>
+    <view class="form_item">
+      <text>收货人：</text>
+      <view><input value="{{orderDataLocal ? orderDataLocal.收货人 : ''}}" name="收货人" placeholder="请输入收货人" /></view>
+    </view>
+    <view class="form_item">
+      <text>收货电话：</text>
+      <view><input value="{{orderDataLocal ? orderDataLocal.收货电话 : ''}}" name="收货电话" placeholder="请输入收货电话" /></view>
+    </view>
+    <view class="form_item">
+      <text>省：</text>
+      <view><input value="{{orderDataLocal ? orderDataLocal.省 : ''}}" name="省" placeholder="请输入省" /></view>
+    </view>
+    <view class="form_item">
+      <text>市：</text>
+      <view><input value="{{orderDataLocal ? orderDataLocal.市 : ''}}" name="市" placeholder="请输入市" /></view>
+    </view>
+    <view class="form_item">
+      <text>区：</text>
+      <view><input value="{{orderDataLocal ? orderDataLocal.区 : ''}}" name="区" placeholder="请输入区" /></view>
+    </view>
+    <view class="form_item">
+      <text>详细地址：</text>
+      <view><input value="{{orderDataLocal ? orderDataLocal.详细地址 : ''}}" name="详细地址" placeholder="请输入详细地址" /></view>
+    </view>
+    <view class="form_item">
+      <text>当前用户：</text>
+      <view><input value="{{userData.username}}" name="当前用户" placeholder="请输入当前用户" /></view>
+    </view>
+    <view class="form_item">
+      <text>支付方式：</text>
+      <select placeholder="请选择支付方式" defaultValue="{{orderDataLocal ? orderDataLocal.支付方式 : ''}}" index="{{orderDataLocal ? orderDataLocal.支付方式index : 0}}" selectData="{{selectData.pay}}" labelKey="支付方式" onChange="paychange" />
+      <!-- <input style="display:none" name="支付方式" value="{{payValue}}" /> -->
+    </view>
+
+    
+    <view class="createButtons">
+      <button type="primary" form-type="submit" class="createOrderSubmit">提交订单</button>
+      <button type="warn" form-type="reset" class="removeOrderData">一键清空</button>
+    </view>
+  </form>
+
+  <view class="goods_list">
+    <view class="header">
+      <text>当前已选择  {{goodList.length}}  个商品</text>
+      <button type="primary" onTap="addGoods">添加商品</button>
+    </view>
+
+    <view class="list">
+      <view class="item" a:for="{{goodList}}">
+        <view class="goods">
+          <view class="header">
+            <image class="head" mode="aspectFit" src="#"/>
+            <view class="data">
+              <view><text>{{item.商品简称}}</text><text class="price" style="margin-left:15rpx;">{{item.标准售价}}￥</text></view>
+              <view>商品编码:{{item.商品编码}}</view>
+              <view>颜色:{{item.颜色}}</view>
+            </view>
+            <view class="control">
+              <view class="num"><input onInput="numInput" onBlur="numInput" type="number" placeholder="数量" value="{{item.购买数量}}" data-id="{{item.id}}" /></view>
+              <view class="del" onTap="deleteGood" data-id="{{item.id}}">删除</view>
+            </view>
+          </view>
+          <view class="bottom">
+            <view>规格:{{item.规格}}</view>
+            <text>规格编码:{{item.规格编码}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  
+
+
+  <!-- 添加商品 -->
+  <addgoods show="{{addGoodsShow}}" onConfirm="addGoodsConfirm" onCancel="addGoodsCancel" />
+  <!-- 添加商品 end -->
+</view>

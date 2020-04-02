@@ -1,0 +1,9 @@
+<view class="select">
+  <picker class="picker" onChange="onChange" value="{{index}}" range="{{selectData}}" range-key="{{labelKey}}" disabled="{{disabled}}">
+    <view a:if="{{select || defaultValue}}">
+      <text a:if="{{select}}">{{select[labelKey]}}</text>
+      <text a:else>{{defaultValue}}</text>
+    </view>
+    <view a:else style="color:#cccccc;box-sizing:border-box;height:100%;display:flex;align-items:center;justify-content:center;">{{placeholder == '' ? '请选择' : placeholder}}</view>
+  </picker>
+</view>

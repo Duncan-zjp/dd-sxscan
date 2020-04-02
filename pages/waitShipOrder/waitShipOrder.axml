@@ -1,0 +1,33 @@
+<view class="orderList">
+  <view class="orderList__main">
+    <scroll-view class="orderList__scrollView" scroll-y="{{true}}">
+      <view a:key="{{item.orderNum}}" a:for="{{orderList}}" data-orderData="{{item}}" class="orderList__item" onTap="onRedirect">
+        <view class="orderList__itemHeader">
+          <text>订单号：{{item.orderNum}}</text>
+          <text>状态：{{item.status}}</text>
+        </view>
+        <view class="orderList__itemContent">
+          <view class="orderList__itemContent__tbNum">
+            <text class="iconfont icon-tao"></text>
+            <text>淘宝单号： {{item.tbNum}}</text>
+          </view>
+          <view>
+            <text class="iconfont icon-people"></text>
+            <text>买家姓名： {{item.buyerName}}</text>
+          </view>
+          <view>
+            <text class="iconfont icon-wang_light"></text>
+            <text>买家昵称： {{item.buyerNick}}</text>
+          </view>
+          <view>
+            <text class="iconfont icon-mobilefill"></text>
+            <text>手机号码： {{item.buyerPhone}}</text>
+          </view>
+        </view>
+        <view class="orderList__itemBottom">
+          <text>{{item.createTime}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

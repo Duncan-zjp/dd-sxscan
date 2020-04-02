@@ -1,0 +1,91 @@
+.goodsmsg_bg{
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,.5);
+  position:fixed;
+  top:0;
+  z-index:2;
+}
+.goodsmsg{
+  width:100vw;
+  height:500rpx;
+  background:#fff;
+  position:fixed;
+  z-index:3;
+  transition:all .4s
+}
+.goods_pic{
+  width:100rpx;
+  height:100rpx;
+  background:#fff;
+  position:absolute;
+  top:-20rpx;
+  left:70rpx;
+  border-radius:5rpx;
+  border:1rpx solid #ccc; 
+}
+.goods_msg{
+  box-sizing:border-box;
+  width:100%;
+  height:80rpx;
+  padding:10rpx 0 0 200rpx;
+  font-size:24rpx;
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:column;
+  justify-content:center;
+  color:#EE3B3B;
+}
+.goods_msg view:first-child{
+  margin-bottom:10rpx;
+  color:#515151;
+}
+
+.goods_info{
+  padding:40rpx 0 0 70rpx; 
+  font-size:24rpx;
+  color:#515151;
+}
+.goods_info view{
+  margin-bottom:25rpx;
+}
+.goods_info .spec,.goods_info .num{
+  display:flex;
+  align-items:center;
+}
+.goods_info .spec text:last-child{
+  border:1rpx solid #EE3B3B;
+  padding:10rpx;
+  color:#EE3B3B;
+  border-radius:6rpx;
+  font-size:18rpx;
+}
+.goods_info .num input{
+  width:100rpx;
+  height:30rpx;
+  border:1rpx solid #ccc;
+  font-size:22rpx;
+}
+
+.goods_btns{
+  width:100%;
+  height:80rpx;
+  line-height:80rpx;
+  text-align:center;
+  display:flex;
+  justify-content:space-between;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+.goods_btns button{
+  width:50%;
+  font-size:28rpx;
+  border-radius:0;
+  background:#9ACD32;
+  border:none;
+}
+.goods_btns button:first-child{
+  background:#CD6839;
+  font-size:36rpx;
+}

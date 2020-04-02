@@ -1,0 +1,61 @@
+<view class="body">
+  <view class="top">
+    <view class="header">
+        <image src="../../images/head.png" mode="aspectFit" />
+    </view>
+    <view class="username">
+      <text>{{username}}</text>
+    </view>
+    <view class="userInfo_data">
+      <view class="item" a:for="{{userPrice}}">
+        <view><text>{{item.店铺昵称}}</text><text>店铺名称</text></view>
+        <view><text>{{item.剩余预存款}}￥</text><text>预存款</text></view>
+        <view><text>{{item.剩余信用额度}}</text><text>信用额度</text></view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="bottom">
+    <view class="li">
+      <navigator url="../putpage/putpage?tab=1" redirect hover-class="className">入库明细</navigator>
+    </view>
+    <view class="li">
+      <navigator url="../outpage/outpage?tab=1" redirect hover-class="className">出库明细</navigator>
+    </view>
+    <view class="li">
+      <navigator url="../stockcheck/stockcheck" redirect hover-class="className">库存查询</navigator>
+    </view>
+    <view class="li">
+      <navigator url="../process/process" redirect hover-class="className">工序明细</navigator>
+    </view> 
+    <view class="li">
+      <navigator url="../warehouseAcceptance/warehouseAcceptance" redirect hover-class="className">仓库验收</navigator>
+    </view> 
+  </view> -->
+
+  <view class="entrance">
+    <navigator url="/pages/putpage/putpage" class="item">
+      <image mode="aspectFit" src="../../icon/inStorage.png"/>
+      <text>入库明细</text>
+    </navigator>
+    <navigator url="/pages/outpage/outpage" class="item">
+      <image mode="aspectFit" src="../../icon/outStorage.png"/>
+      <text>出库明细</text>
+    </navigator>
+    <navigator url="/pages/stockcheck/stockcheck" class="item">
+      <image mode="aspectFit" src="../../icon/inventory.png"/>
+      <text>库存查询</text>
+    </navigator>
+    <navigator url="/pages/process/process" class="item">
+      <image mode="aspectFit" src="../../icon/process.png"/>
+      <text>工序明细</text>
+    </navigator>
+    <navigator url="/pages/warehouseAcceptance/warehouseAcceptance" class="item">
+      <image mode="aspectFit" src="../../icon/ys.png"/>
+      <text>仓库验收</text>
+    </navigator>
+    <view class="item" onTap="cancellation">
+      <image mode="aspectFit" src="../../icon/cancellation.png"/>
+      <text>注销</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+<view class="newCreateOrder">
+  <view class="shop">
+    <view class="box"><select selectData="{{shop}}" defaultValue="{{shop[0].value}}"  index="{{0}}" labelKey="店铺昵称" onChange="handleShopChange" /></view>
+    <view class="box"><text class="price">￥ {{currShop.剩余预存款}}</text><text>预 存 款</text></view>
+    <view class="box"><text>{{currShop.剩余信用额度}}</text><text>信 用 额 度</text></view>
+  </view>
+
+
+  <view class="search">
+    <input placeholder="请输入商品关键字..." onInput="handleSearchGoodsChange" onConfirm="handleSearchGoodsChange" />
+    <button type="primary" class="iconfont icon-sousuo btn" onTap="handleSearchGoods"></button>
+  </view>
+
+  <scroll-view class="goodsList" scroll-y>
+    <view class="goodsList_info">
+      <view class="item" onTap="handleClickGoods" data-data="{{item}}" a:for="{{goodsList}}">
+        <view class="pic"><image mode="aspectFit" src='{{test}}'/></view>
+        <view class="title">
+          <text>{{item.商品编码}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class="gitem" a:for="{{goodsList}}">
+      <view class="header" id="{{index}}" onTap="handleToggleOpen">
+        <text>{{item.创建时间}}商品编码</text>
+        <text>{{item.open ? 'v' : '>'}}</text>
+      </view>
+      <scroll-view a:if="{{item.open}}" class="skuList" scroll-x>
+        <view class="item">
+          <view class="skuCode">规格编码</view>
+          <view class="num">数量</view>
+          <view class="price">售价</view>
+          <view class="add">操作</view>
+        </view>
+        <view class="item" a:for="{{[{}]}}">
+          <view class="skuCode">{{item.规格编码}}规格编码规格编码规格编码规格编码规格编码</view>
+          <view class="num"><input type="number" /></view>
+          <view class="price">{{item.标准售价}}￥100000.00</view>
+          <view class="add">+</view>
+        </view>
+      </scroll-view>
+    </view> -->
+
+    <view a:if="{{!goodsList.length}}" class="noneData">暂无数据</view>
+  </scroll-view>
+
+  <view class="btns">
+    <button type="primary" class="iconfont icon-cart buy" onTap="handleShowBuyCar">({{buyCarData.length}})</button>
+    <button type="primary" onTap="createOrder">立即下单</button>
+  </view>
+
+
+  <!-- 商品信息组件 -->
+  <goodsmsg goods="{{currGoods}}" onJoin="handleChangeJoinCar" />
+  <!-- 商品信息组件 end -->
+
+  <!-- 购物车 -->
+  <buycar show="{{buyCarShow}}" goods="{{buyCarData}}" onClose="handleOnClose" />
+  <!-- 购物车 end -->
+</view>

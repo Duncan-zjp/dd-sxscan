@@ -1,0 +1,59 @@
+<view class="block_0">
+  <view class="row_0">
+    <view class="row_0_wrap">
+      <view class="box">
+        <view class="btn"><button><navigator url="/pages/putpage/putpage" hover-class="className">扫码入库</navigator></button></view>
+      </view>
+      <view class="box">
+        <view class="btn"><button url="/pages/login/login"><navigator url="/pages/outpage/outpage">扫码出库</navigator></button></view>
+      </view>
+      <view class="box">
+        <view class="btn"><button data-type="review" onTap="scanfn">工序审核</button></view>
+      </view>
+      <view class="box">
+        <view class="btn"><button data-type="return" onTap="scanfn">工序驳回</button></view>
+      </view>
+      <view class="box">
+        <view class="btn"><button data-type="warehouseAcceptance" onTap="scanfn">仓库验收</button></view>
+      </view>
+      <view class="box">
+        <view class="btn"><button data-type="warehouseReturn" onTap="scanfn">仓库驳回</button></view>
+      </view>
+      <view class="box">
+        <view class="btn"><button data-type="createOrder" onTap="scanfn">创建订单</button></view>
+      </view>
+      <view class="box">
+        <view class="btn"><button data-type="orderCenter" onTap="scanfn">订单中心</button></view>
+      </view>
+    </view>
+  </view>
+
+  
+
+  <view class="selectWarehouse" a:if="{{selectWarehouseShow}}">
+    <view class="selectWarehouse_button">
+      <text onTap="selectWarehouseCancel">取消</text>
+      <text onTap="selectWarehouseConfirm">确定</text>
+    </view>
+    <picker-view value="{{[selectWarehouseIndex]}}" onChange="selectWarehouseChange">
+      <picker-view-column>
+        <view>请选择</view>  
+        <view a:for="{{selectWarehouseData}}" data-id="{{item.Id}}">{{item.WarehouseName}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+
+
+  <!-- <view class="footer">
+    <navigator class="left" url="#" redirect hover-class="className">
+      <image src="../../images/u97.png" mode="" />
+      <view>扫码</view>
+    </navigator>
+
+    <navigator class="right" url="../personal/personal" redirect hover-class="className" class="right">
+      <image src="../../images/u95.png" mode="" />
+      <view>我</view>
+    </navigator>
+    
+  </view> -->
+</view>

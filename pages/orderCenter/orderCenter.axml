@@ -1,0 +1,44 @@
+<view class="orderCenter">
+  <view class="search">
+    <select placeholder="请选择" selectData="{{selectData.searchType}}" onChange="searchTypeChange" />
+    <input onInput="onSearchInput" placeholder="请输入{{searchTypeStr}}" onConfirm="search" />
+    <button size="mini" type="primary" onTap="search">搜索</button>
+  </view>
+
+  <scroll-view scroll-y="{{true}}" class="list" onScrollToLower="listOnLower">
+    <view class="item" a:for="{{list}}" id="{{index}}" onTap="handleToggleOpen">
+      <!-- <view class="buyer"><text>{{item.用户账户}}</text><text>{{item.创建时间}}</text></view>
+      <view class="pay"><text>{{item.支付方式}}</text><text>{{item.支付金额}}￥</text></view>
+      <view class="no"><text>单号</text><text>{{item.系统单号}}</text></view>
+
+      <view class="delivery">
+        <view class="title"><text>收货信息</text><text>{{item.收货人}}</text></view>
+        <view class="mobile"><text>收货电话：</text><text onTap="tel" data-phone="{{item.收货手机}}">{{item.收货手机}}</text></view>
+        <view class="address">收货地址：{{item.省}}{{item.市}}{{item.区}}{{item.详细地址}}</view>
+        <view class="deStatus"><text>收货状态：{{item.确认收货 ? '已收货' : '未收货'}}</text><button data-no="{{item.系统单号}}" size="mini" onTap="onDelivery" type="primary" disabled="{{item.确认收货}}">确认收货</button></view>
+        <view class="more" data-goods="{{item.商品明细}}" onTap="orderMore"><text>查看详情</text><text>></text></view>
+      </view> -->
+      <view class="header">
+        <text>{{item.创建时间}}</text>
+        <text>{{item.open ? 'v' : '>'}}</text>
+      </view>
+      <scroll-view a:if="{{item.open}}" class="goodList" scroll-x>
+        <view class="item">
+          <view>商品编码</view>
+          <view>规格编码</view>
+          <view>购买数量</view>
+          <view>标准售价</view>
+        </view>
+        <view class="item" a:for="{{item.商品明细}}">
+          <view>{{item.商品编码}}</view>
+          <view>{{item.规格编码}}</view>
+          <view>{{item.购买数量}}</view>
+          <view>{{item.标准售价}}￥</view>
+        </view>
+      </scroll-view>
+    </view>
+  </scroll-view>
+
+  <!-- 订单详情 -->
+  <ordermore show="{{orderMoreShow}}" list="{{currOrderGoods}}" onCancel="orderMoreCancel" />
+</view>

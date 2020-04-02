@@ -1,0 +1,11 @@
+<view class="return_view">
+  <form class="return_form" onSubmit="return_submit" onReset="return_reset">
+    <view class="item">
+      <textarea placeholder="请输入驳回原因" name="rejectmsg" maxlength="300"></textarea>
+    </view>
+    <view class="btn">
+      <button class="return_submit" formType="submit">确定</button>
+      <button formType="reset">重置</button>
+    </view>
+  </form>
+</view>

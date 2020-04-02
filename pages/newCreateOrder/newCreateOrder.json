@@ -1,0 +1,7 @@
+{
+  "usingComponents":{
+    "select":"../../components/select/select",
+    "goodsmsg":"./components/goodsmsg/goodsmsg",
+    "buycar":"./components/buycar/buycar"
+  }
+}

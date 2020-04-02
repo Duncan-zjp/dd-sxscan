@@ -1,0 +1,78 @@
+.reviewAlign{
+  width:100%;
+}
+
+
+
+.goodList{
+  width:100vw;
+  height:calc(100vh - 100rpx);
+  overflow-y:scroll !important;
+}
+.goodList .item{
+  width:2150rpx;
+  overflow:hidden;
+  padding:10rpx 0 ;
+}
+.goodList .item:first-child{
+  background:#DBDBDB;
+  position:sticky;
+  left:0;
+  top:0;
+}
+.goodList .item view{
+  width:200rpx;
+  float:left;
+  text-align:center;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  font-size:24rpx;
+}
+.goodList .selectEnd{
+  background:#98FB98;
+}
+.goodList .item view:first-child{
+  width:100rpx;
+}
+.goodList .item view:nth-child(2){
+  width:250rpx;
+}
+.goodList .item view:nth-child(3){
+  width:800rpx;
+}
+
+
+
+.btns{
+  width:100%;
+  height:100rpx;
+  line-height:100rpx;
+  font-size:32rpx;
+  position:fixed;
+  left:0;
+  bottom:0;
+  z-index:9;
+  display:flex;
+  justify-content:space-between;
+}
+.btns button{
+  width:100%;
+}
+.doReview{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.doReview button,.doReview label{
+  width:50%;
+}
+.doReview label{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.doReview label text{
+  margin-left:20rpx;
+}

@@ -1,0 +1,31 @@
+<view a:if="{{show}}" class="buyCar">
+  
+  <scroll-view class="car_list" scroll-y>
+    <view class="item" a:for="{{goodsList}}">
+      <view class="wrap">
+        <view class="wrap_info">
+          <view class="pic"><image mode="scaleToFill" src=""/></view>
+          <view class="content">
+            <view><text>{{item.商品简称}}</text></view>
+            <view><text>颜色：</text><text>{{item.颜色}}</text></view>
+            <view class="price"><text>￥{{item.标准售价}}</text></view>
+          </view>
+        </view>
+        <view class="iconfont icon-delete delete" onTap="handleDelGoods" data-id="{{item.$id}}"></view>
+      </view>
+      <view class="other">
+        <view class="oitem"><text>规格：</text><text>{{item.规格}}</text></view>
+        <view class="oitem"><text>商品编码：</text><text>{{item.商品编码}}</text></view>
+        <view class="oitem"><text>规格编码：</text><text>{{item.规格编码}}</text></view>
+        <view class="oitem num">
+          <view class="oitem_info"><text>数量：</text><input type="number" value="{{item.购买数量}}" onBlur="handleNumBlur" data-id="{{item.$id}}" /></view>
+        </view>
+        <view class="oitem countPrice">
+          <view class="oitem_info"><text>总价：</text><text>￥{{item.标准售价*item.购买数量}}</text></view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <button type="primary" class="closeBuyCar" onTap="handleOnClose">关闭</button>
+</view>

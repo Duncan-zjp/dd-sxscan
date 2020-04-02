@@ -1,0 +1,9 @@
+<view class="fixedBox">
+  <view class="content">
+    <slot></slot>
+    <view>
+      <button size="default" type="primary">确认</button>
+      <button size="default" type="primary">取消</button>
+    </view>
+  </view>
+</view>

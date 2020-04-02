@@ -1,0 +1,41 @@
+<view class="inStorage">
+  <view class="selectWareHouse" a:if="{{showPicker}}">
+  <view class="selectWarehouse_button">
+    <view onTap="selectWarehouseCancel">取消</view>
+    <view onTap="selectWarehouseConfirm">确定</view>
+  </view>
+  <view class="pickerview" >
+    <picker-view onChange="onSelectChange">
+      <picker-view-column>
+        <view a:key="{{item.value}}" a:for="{{wareHouseList}}">{{item.label}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+  </view>
+
+  <scroll-view class="goodsList" scroll-x>
+    <view class="item">
+      <view>供应商</view>
+      <view>商品编码</view>
+      <view>规格名称</view>
+      <view>采购数</view>
+      <view>已入库数</view>
+      <view>已扫描数</view>
+      <view>待入库数</view>
+    </view>
+    <view class="{{`item ${item.scannedNum >= item.canReceivedQty ? 'item-lock': ''}`}}" a:key="{{item.id}}" a:for="{{goodsList}}">
+      <view>{{item.VendorName}}</view>
+      <view>{{item.ItemKey}}</view>
+      <view>{{item.Spec}}</view>
+      <view>{{item.Qty}}</view>
+      <view>{{item.ReceivedQty}}</view>
+      <view>{{item.scannedNum}}</view>
+      <view>{{item.canReceivedQty}}</view>
+    </view>
+  </scroll-view>
+
+  <view class="btns">
+    <button type="warn" disabled="{{isLoading}}" loading="{{isLoading}}" onTap="handleScan">扫描</button>
+    <button type="primary" onTap="onInStorage">入库</button>
+  </view>
+</view>

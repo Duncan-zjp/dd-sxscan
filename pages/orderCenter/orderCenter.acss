@@ -1,0 +1,107 @@
+.orderCenter{
+  width:100%;
+  background:#EAEAEA;
+}
+.orderCenter *{
+  font-size:28rpx;
+  color:#555555;
+}
+
+.search{
+  width:100%;
+  height:60rpx;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#fff;
+  position:fixed;
+  top:0;
+  left:0;
+}
+.search>*{
+  height:100%;
+}
+.search .select{
+  width:20%;
+}
+.search input{
+  width:60%
+}
+.search button{
+  width:20%;
+  color:#fff;
+}
+
+.list{
+  padding:20rpx;
+  box-sizing:border-box;
+  margin-top:60rpx;
+  height:calc(100vh - 60rpx);
+  /* height:100vh; */
+}
+.list .item{
+  background:#fff;
+  margin-top:20rpx;
+}
+.list .item .buyer,.list .item .no,.list .item .pay,.list .item .title,.list .item .deStatus,.list .item .more{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10rpx;
+}
+.list .delivery .mobile,.list .delivery .address{
+  background:#EAEAEA;
+  padding:10rpx;
+}
+.list .delivery .address{
+  line-height:40rpx;
+}
+.list .delivery .mobile text{
+  color:#F4A460;
+}
+.list .delivery .mobile text:first-child{
+  color:#555555;
+}
+.list .delivery button{
+  color:#fff;
+  border-radius:5%;
+}
+.list .item .more{
+  font-size:50rpx;
+  font-weight:bold;
+  padding:30rpx;
+  border-top:1rpx solid #ccc;
+}
+.list .item .header{
+  padding:20rpx;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+
+.goodList{
+  width:100%;
+}
+.goodList .item{
+  width:1200rpx;
+  padding:20rpx;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.goodList .item:first-child{
+  background:#EAEAEA;
+  margin-top:0;
+}
+.goodList .item view{
+  width:200rpx;
+  font-size:30rpx;
+  text-align:center;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+.goodList .item view:nth-child(2){
+  width:600rpx;
+}

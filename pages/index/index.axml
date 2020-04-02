@@ -1,0 +1,111 @@
+<view class="index">
+  <view class="entrance">
+    <navigator url="/pages/inStorage/inStorage" class="item">
+      <text class="iconfont icon-scan scan"></text>
+      <text>扫码入库（新）</text>
+    </navigator> <navigator url="/pages/putpage/putpage" class="item">
+      <text class="iconfont icon-scan scan"></text>
+      <text>扫码入库</text>
+    </navigator>
+    <navigator url="/pages/outpage/outpage" class="item">
+      <text class="iconfont icon-scan scan"></text>
+      <text>扫码出库</text>
+    </navigator>
+    <navigator url="/pages/createOrder/createOrder" class="item">
+      <text class="iconfont icon-add create"></text>
+      <text>创建订单</text>
+    </navigator>
+    <navigator url="/pages/newCreateOrder/newCreateOrder" class="item">
+      <text class="iconfont icon-add create"></text>
+      <text>创建订单（新）</text>
+    </navigator>
+  </view>
+
+  <view class="scanControl">
+    <view class="item">
+      <view class="header" onTap="toggleOrderShow">
+        <text class="iconfont icon-text order"></text>
+        <text>订单信息</text>
+      </view>
+      <view class="conent" a:if="{{orderShow}}">
+        <navigator url="/pages/orderCenter/orderCenter" class="citem">
+          <text class="iconfont icon-text order"></text>
+          <text class="citem__text">订单中心</text>
+        </navigator>
+        <!-- <navigator url="/pages/waitShipOrder/waitShipOrder" class="citem">
+          <text class="iconfont icon-send send"></text>
+          <text class="citem__text">待发货订单</text>
+        </navigator> -->
+        <navigator url="/pages/waitOrderCheck/waitOrderCheck" class="citem">
+          <text class="iconfont icon-copy send"></text>
+          <text class="citem__text">待复检订单</text>
+        </navigator>
+      </view>
+    </view>
+    <view class="item">
+      <view class="header" onTap="toggleGxShow">
+        <text class="iconfont icon-settings setting"></text>
+        <text>工序信息</text>
+      </view>
+      <view class="conent" a:if="{{gxShow}}">
+        <view class="citem" data-type="review" onTap="scanfn">
+          <text class="iconfont icon-auction review"></text>
+          <text class="citem__text">工序审核</text>
+        </view>
+        <view class="citem" data-type="return" onTap="scanfn">
+          <text class="iconfont icon-pullleft return"></text>
+          <text class="citem__text">工序驳回</text>
+        </view>
+      </view>
+    </view>
+    <view class="item">
+      <view class="header" onTap="toggleCkShow">
+        <text class="iconfont icon-home send"></text>
+        <text>仓库信息</text>
+      </view>
+      <view class="conent" a:if="{{ckShow}}">
+        <view class="citem" data-type="warehouseAcceptance" onTap="scanfn">
+          <text class="iconfont icon-deliver review"></text>
+          <text class="citem__text">仓库验收</text>
+        </view>
+        <view class="citem" data-type="warehouseReturn" onTap="scanfn">
+          <text class="iconfont icon-pullleft return"></text>
+          <text class="citem__text">仓库驳回</text>
+        </view>
+        <!-- <navigator url="/pages/inventory/inventory" class="citem">
+          <text class="iconfont icon-copy send"></text>
+          <text class="citem__text">创建盘点</text>
+        </navigator> -->
+      </view>
+    </view>
+  </view>
+
+  
+
+  <view class="selectWarehouse" a:if="{{selectWarehouseShow}}">
+    <view class="selectWarehouse_button">
+      <text onTap="selectWarehouseCancel">取消</text>
+      <text onTap="selectWarehouseConfirm">确定</text>
+    </view>
+    <picker-view value="{{[selectWarehouseIndex]}}" onChange="selectWarehouseChange">
+      <picker-view-column>
+        <view>请选择</view>  
+        <view a:for="{{selectWarehouseData}}" data-id="{{item.Id}}">{{item.WarehouseName}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+
+
+  <!-- <view class="footer">
+    <navigator class="left" url="#" redirect hover-class="className">
+      <image src="../../images/u97.png" mode="" />
+      <view>扫码</view>
+    </navigator>
+
+    <navigator class="right" url="../personal/personal" redirect hover-class="className" class="right">
+      <image src="../../images/u95.png" mode="" />
+      <view>我</view>
+    </navigator>
+    
+  </view> -->
+</view>

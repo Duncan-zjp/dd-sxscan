@@ -1,0 +1,22 @@
+.select{
+  height:40rpx;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align:center;
+}
+.select *{
+  text-align:center;
+  width:100%;
+  font-size:24rpx;
+}
+.picker{
+  width:100%;
+  padding:5rpx 10rpx;
+}
+.picker *{
+  width:100%;
+}
+.picker view{
+   padding:5rpx 10rpx;
+}

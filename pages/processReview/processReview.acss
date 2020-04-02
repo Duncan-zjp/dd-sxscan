@@ -1,0 +1,46 @@
+.review_form .wrap{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  box-sizing:border-box;
+  padding:0 10rpx;
+}
+.search_item{
+  width:47%;
+  margin-top:40rpx;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.search_item text{
+  width:140rpx;
+  font-size:28rpx;
+  margin-right:10rpx;
+}
+.search_item input{
+  width:200rpx;
+  border:1rpx solid #ccc;
+  height:40rpx;
+  line-height:40rpx;
+  padding-left:5rpx;
+  border-radius:10rpx;
+  text-align:center;
+}
+.review_form .btn{
+  display:flex;
+  justify-content:center;
+  margin-top:20rpx;
+}
+.review_form .btn button{
+  width:200rpx;
+  height:60rpx;
+  line-height:60rpx;
+  text-align:center;
+  font-size:28rpx;
+  border-radius:20rpx;
+  margin:0 20rpx;
+}
+.review_submit{
+  background:#38adff;
+  color:#fff;
+}

@@ -1,0 +1,20 @@
+<view class="all_main">
+  <form onSubmit="formSubmit" onReset="formReset" >
+    <view class="header_img">
+      <image src="logos.png" mode="" />
+    </view>
+    <view class="box">
+      <text>服务码:</text><input onInput="bindkey_servercode" type=""  placeholder="" auto-focus value="{{servercode}}" />
+    </view>
+    <view class="box">
+      <text>账号:</text><input onInput="bindkey_username" type=""  placeholder="" auto-focus value="{{username}}" />
+    </view>
+    <view class="box">
+      <text>密码:</text><input onInput="bindkey_password" type="" placeholder="" auto-focus password value="{{password}}" />
+    </view>
+    <view class="box anniu">
+      <button class="dl" type="primary" onTap="websocket">登陆</button>
+    </view>
+    <!-- <view>{{errormsg}}</view> -->
+  </form>
+</view>

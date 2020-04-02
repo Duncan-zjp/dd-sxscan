@@ -1,0 +1,40 @@
+<view class="reviewAlign">
+
+
+  <scroll-view class="goodList" scroll-x="{{true}}">
+    <view class="item">
+      <view>序号</view>
+      <view>订单号</view>
+      <view>商品规格</view>
+      <view>颜色</view>
+      <view>订购数</view>
+      <view>已扫码数</view>
+      <view>商品编码</view>
+      <view>规格编码</view>
+      <!-- <view>供应商</view> -->
+    </view>
+    <view class="item {{item.Num == item.code.length ? 'selectEnd' : ''}}" a:for="{{goodList}}" id="item{{index}}">
+      <view>{{index+1}}</view>
+      <view>{{item.TradeKey ? item.TradeKey : '--'}}</view>
+      <view>{{item.Spec ? item.Spec : '--'}}</view>
+      <view>{{item.Color ? item.Color : '--'}}</view>
+      <view>{{item.Num ? item.Num : '--'}}</view>
+      <view>{{item.code.length}}</view>
+      <view>{{item.OuterIid ? item.OuterIid : '--'}}</view>
+      <view>{{item.OuterSkuId ? item.OuterSkuId : '--'}}</view>
+      <!-- <view>{{item.g}}</view> -->
+    </view>
+  </scroll-view>
+
+  <view class="btns">
+    <button a:if="{{!isSelectEnd}}" type="primary" onTap="handleScanGood">扫描产品</button>
+    <button a:else type="primary" onTap="handleScanEnd">完成复检</button>
+    <!-- <view a:else class="doReview">
+      <label>
+        <checkbox />
+        <text>扫码入库复检</text>
+      </label>
+      <button type="primary" onTap="handleScanEnd">完成复检</button>
+    </view> -->
+  </view>
+</view>

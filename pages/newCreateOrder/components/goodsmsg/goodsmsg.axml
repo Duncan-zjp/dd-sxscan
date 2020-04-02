@@ -1,0 +1,21 @@
+<view a:if="{{bottom>=0}}" class="goodsmsg_bg" onTap="handleCancel"></view>
+<view class="goodsmsg" style="bottom:{{bottom+'rpx'}}">
+  <view class="goods_pic"><image mode="aspectFit" src=""/></view>
+
+  <view class="goods_msg">
+    <view class="goods_title">{{data.商品简称}}</view>
+    <view class="goods_price">￥{{data.标准售价}}</view>
+  </view>
+
+  <view class="goods_info">
+    <view><text>颜色：</text><text>{{data.颜色}}</text></view>
+    <view><text>规格编码：</text><text>{{data.规格编码}}</text></view>
+    <view class="spec"><text>规格：</text><text>{{data.规格}}</text></view>
+    <view class="num"><text>数量：</text><input type="number" onBlur="handleNumBlur" data-id="{{data.$id}}" value="{{data.购买数量}}" /></view>
+  </view>
+
+  <view class="goods_btns">
+    <button type="primary" onTap="handleCancel">取消</button>
+    <button type="primary" onTap="handleOnJoin">加入购物车</button>
+  </view>
+</view>

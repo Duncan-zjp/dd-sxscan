@@ -1,0 +1,70 @@
+<view class="stock">
+  <form class="stock_form" onSubmit="stockCheck_submit" onReset="stockCheck_reset">
+    <view class="wrap">
+      <view class="search_item">
+        <text>商品编码</text>
+        <input name="item" placeholder="" />
+      </view>
+      <view class="search_item">
+        <text>规格名称</text>
+        <input name="sku" placeholder="" />
+      </view>
+      <view class="search_item">
+        <text>仓库名称</text>
+        <picker onChange="stockChange" value="{{warehouseIndex}}" range="{{warehouseList}}" range-key="WarehouseName">
+          <view class="selectstocktext">
+            {{warehouseList[warehouseIndex].WarehouseName}}
+          </view>
+        </picker>
+        <input name="warehouse" style="display:none;" value="{{warehouseList[warehouseIndex].Id}}" />
+      </view>
+      <view class="search_item">
+        <text>供应商</text>
+        <picker onChange="supplierChange" value="{{supplierIndex}}" range="{{supplierList}}">
+          <view class="selectstocktext">
+            {{supplierList[supplierIndex]}}
+          </view>
+        </picker>
+        <input name="d" style="display:none;" value="{{supplierIndex}}" />
+      </view>
+      <view class="search_item">
+        <text>开始日期</text>
+        <input onFocus="selectTimeStartFn" value="{{selectTimeStart}}" name="begin" placeholder="" />
+      </view>
+      <view class="search_item">
+        <text>结束日期</text>
+        <input onFocus="selectTimeEndFn" value="{{selectTimeEnd}}" name="end" placeholder="" />
+      </view>
+    </view>
+    <view class="btn">
+      <button class="stock_submit" formType="submit">搜索</button>
+      <button formType="reset">重置</button>
+    </view>
+  </form>
+
+
+  <view class="table">
+    <view class="theader">
+      <text style="width:25%">仓库</text>
+      <text style="width:25%">商品编码</text>
+      <text style="width:30%">规格名称</text>
+      <text style="width:20%">库存数</text>
+    </view>
+    <view class="tbody">
+      <!-- <view class="item">
+        <text style="width:25%">2019-01-01</text>
+        <text style="width:25%">FSK-ASD</text>
+        <text style="width:20%">规格</text>
+        <text style="width:10%">3</text>
+        <text style="width:20%">仓库</text>
+      </view> -->
+      <view class="notData" a:if="{{dataarr.length==0}}">暂无数据</view>
+      <view class="item" a:for="{{dataarr}}">
+        <text style="width:25%">{{item.WarehouseName}}</text>
+        <text style="width:25%">{{item.ItemKey}}</text>
+        <text style="width:30%">{{item.SkuKey}}</text>
+        <text style="width:20%">{{item.EndQty}}</text>
+      </view>
+    </view>
+  </view>
+</view>

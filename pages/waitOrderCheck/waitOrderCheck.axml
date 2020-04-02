@@ -1,0 +1,17 @@
+<view class="waitOrderCheck">
+  <view class="list">
+    <view class="item">
+      <view>序号</view>
+      <view>订单号</view>
+    </view>
+    <view class="item {{item.select ? 'select' : ''}}" a:for="{{orderList}}" onTap="handleSelect" id="{{item.id}}">
+      <view>{{index+1}}</view>
+      <view>{{item.no}}</view>
+    </view>
+  </view>
+
+  <view class="btns">
+    <button class="iconfont icon-scan" type="primary" form-type="submit" onTap="handleScan"></button>
+    <button type="primary" form-type="submit" onTap="handleCheck">去复检产品</button>
+  </view>
+</view>

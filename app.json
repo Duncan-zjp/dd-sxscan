@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/outpage/outpage",
+    "pages/putpage/putpage",
+    "pages/personal/personal",
+    "pages/Scan/Scan",
+    "pages/stockcheck/stockcheck",
+    "pages/process/process",
+    "pages/processReview/processReview",
+    "pages/processReturn/processReturn",
+    "pages/warehouseReturn/warehouseReturn",
+    "pages/warehouseAcceptance/warehouseAcceptance",
+    "pages/createOrder/createOrder",
+    "pages/orderCenter/orderCenter",
+    "pages/waitShipOrder/waitShipOrder",
+    "pages/waitOrderCheck/waitOrderCheck",
+    "pages/reviewAlign/reviewAlign",
+    "pages/ship/ship",
+    "pages/inStorage/inStorage",
+    "pages/inventory/inventory",
+    "pages/newCreateOrder/newCreateOrder",
+    "pages/newCreateOrderSubmit/newCreateOrderSubmit"
+  ],
+  "window": {
+    "defaultTitle": "尚夏ERP小程序",
+    "titleBarColor": "#09bcfe"
+  },
+  "tabBar": {
+    "textColor": "#555555",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#fff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "name": "首页",
+        "icon": "icon/tab_home.png",
+        "activeIcon": "icon/tab_home_active.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "name": "用户",
+        "icon": "icon/tab_my.png",
+        "activeIcon": "icon/tab_my_active.png"
+      }
+    ]
+  }
+}

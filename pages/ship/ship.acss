@@ -1,0 +1,73 @@
+.orderShip {
+  width: 750rpx;
+  position: relative;
+}
+
+.orderShip__form{
+  width: 100%;
+  height: calc(100vh - 100rpx);
+}
+.orderShip__formItem{
+  padding:  10rpx 20rpx 10rpx 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #fff;
+  margin: 10rpx 0;
+  height: 130rpx;
+}
+
+.orderShip__formItem.firstItem{
+  flex-direction: row;
+  align-items: center;
+}
+.orderShip__formItem__title{
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+  font-weight: bold;
+}
+
+.orderShip__input {
+ line-height: 28rpx;
+ height: 40rpx;
+ font-size: 28rpx;
+}
+
+.orderShip__myselect{
+  padding: 8rpx 0;
+  padding-left: 12rpx;
+}
+
+.orderShip__button {
+  height: 100rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.orderShip__button button{
+  height: 100%;
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+
+.orderShip__myselect-default{
+  color: rgb(204, 204, 204);
+}
+
+.orderShip__disabled .orderShip__input{
+  background-color: #f2f2f2;
+}
+
+.orderShip__disabled .orderShip__myselect{
+  background-color: #f2f2f2;
+}

@@ -1,0 +1,62 @@
+<view>
+  <view class="tab">
+    <view data-tabindex="{{1}}" onTap="tabfn" class="{{tabIndex == 1 ? 'on' : ''}}">未验收</view>
+    <view data-tabindex="{{2}}" onTap="tabfn" class="{{tabIndex == 2 ? 'on' : ''}}">已验收</view>
+  </view>
+
+
+
+  <view class="list_box">
+    
+    <scroll-view class="list" scroll-y="{{true}}" lower-threshold="100" onScrollToLower="scrollBottom">
+      <!-- <view class="item"> -->
+      <view class="item" a:for="{{listData}}">
+        <view class="topMsg">
+          <view class="topitem">客户姓名：{{item.ReceiverName}}</view>
+          <view class="topitem">派单人：{{item.OrderCheckUser}}</view>
+          <view class="topitem">淘宝单号：{{item.Tid}}</view>
+          <view class="topitem">系统单号：{{item.TradeKey}}</view>
+        </view>
+        <view class="otherMsg">
+          <!-- 图片 -->
+          <view class="picMsg">
+              <view class="picMsg_pic">
+                <image style="width:100%;height:100%;" mode="aspectFit" src="{{`${'http://39.100.63.10:30002'+item.BigImageUrl}`}}"/>
+              </view>
+              <view class="picMsg_r">
+                <view>{{item.RawName}}</view>
+                <view>说明：{{item.Spec}}</view>
+                <view>单价：{{item.CostPrice}}</view>
+                <view>数量：{{item.Number}}</view>
+                <view><text>总价：</text><text>{{item.Total}}</text></view>
+              </view>
+          </view>
+          <!-- 数据 -->
+          <view class="midMsg">
+            <view class="midMsg_item"><text>长度</text><text>{{item.Length}}</text></view>
+            <view class="midMsg_item"><text>宽度</text><text>{{item.Width}}</text></view>
+            <view class="midMsg_item"><text>高度</text><text>{{item.Height}}</text></view>
+            <view class="midMsg_item"><text>重量</text><text>{{item.Weight}}</text></view>
+            <view class="midMsg_item"><text>立方</text><text>{{item.Volume}}</text></view>
+            <view class="midMsg_item"><text>平方</text><text>{{item.Area}}</text></view>
+            <view class="midMsg_item"><text>米</text><text>{{item.Metre}}</text></view>
+          </view>
+          <!-- 时间 -->
+          <view class="timeMsg">
+            <view class="timeMsg_item">派单时间：{{item.OrderCheckTime}}</view>
+            <view class="timeMsg_item">发货时间：{{item.ProShipTime}}</view>
+          </view>
+          <!-- 其他 -->
+          <view class="btMsg">
+            <view class="btMsg_item" a:for="{{item.gxList}}" a:if="item.gxList">
+              <text>{{item.c1}}</text>
+              <text>{{item.c2}}</text>
+              <text>{{item.c3}}</text>
+            </view>
+            <view a:if="item.gxNull">{{item.gxNull}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

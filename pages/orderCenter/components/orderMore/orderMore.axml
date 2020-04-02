@@ -1,0 +1,15 @@
+<view a:if="{{show}}" class="orderMore">
+  <scroll-view scroll-y="{{true}}" class="goodList">
+    <view class="item">
+      <view>商品编码</view>
+      <view>购买数量</view>
+      <view>标准售价</view>
+    </view>
+    <view class="item" a:for="{{list}}">
+      <view>{{item.商品编码}}</view>
+      <view>{{item.购买数量}}</view>
+      <view>{{item.标准售价}}￥</view>
+    </view>
+  </scroll-view>
+  <button class="cancel" onTap="cancel" size="mini" type="primary">关闭</button>
+</view>

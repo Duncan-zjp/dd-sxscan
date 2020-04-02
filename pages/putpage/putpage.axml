@@ -1,0 +1,83 @@
+<view class="body">
+  <view></view>
+  <view class="main">
+    <!-- 顶部 时间 搜索 扫码 -->
+    <view class="top">
+      <view class="search" a:if="{{tabs_if == 1}}" >
+        <input type="text" placeholder="可输入入库人搜索" onInput="bindkey_search_inpu"/>
+        <image src="../../images/SEARCH.png" mode="" class="icon" onTap="search"  />
+      </view>
+
+      <view class="boxa" a:if="{{tabs_if == 1}}" >
+        <view class="start_time" onTap="StartTime">{{StartTime}}</view>
+        <view>--</view>
+        <view class="end_time" onTap="EndTime">{{EndTime}}</view>
+        <view  class="icon"></view>
+      </view>
+    </view>
+
+    <!-- 选项卡 入库按钮 -->
+    <view class="tabs">
+      <view class="NotReview {{tabs_if == 0 ? 'active' : ''}}" onTap="Tabs_0" >未入库</view>
+      <view class="Review {{tabs_if == 1 ? 'active' : ''}}" onTap="Tabs_1">已入库</view>
+
+      <picker onChange="sele_ware"  a:if="{{tabs_if == 0}}" class="changewarehouse" onTap="defaultTap" range="{{warehouse}}" range-key="WarehouseName" value="Id"><view class="changewarehouse">入库</view></picker>
+      <view class="scan"  a:if="{{tabs_if == 0}}" onTap="PutWarehousing"><image src="../../images/scan_icon.png" mode="" /></view>
+      <!-- <view a:if="{{tabs_if == 1}}" class="changewarehouse" onTap="">退库</view> -->
+    </view>
+    <!-- 入库 -->
+    <form onSubmit="" onReset="" class="table" id="table_1" a:if="{{tabs_if == 0}}">
+      <view class="thead">
+        <view class="th" formType="submit"  onTap="all_check"></view>
+        <view class="th" a:for="{{table_th}}">{{item}}</view>
+      </view>
+      <checkbox-group class="tr_main" name="all_data">
+        <label class="tr checkbox" a:for="{{table_td}}">
+          <checkbox data-itemkey="{{item.ItemKey}}" data-skukey="{{item.SkuKey}}" onChange="change_tr" class="td" value="{{item}}" checked="{{item.ced}}"/>
+          <view class="td">{{item.TNum}}</view>
+          <view class="td">{{item.shortName}}</view>
+          <!-- <view class="td">{{item.VendorKey}}</view> -->
+          <view class="td">{{item.Num}}</view>
+          <!-- <view class="td">{{item.Time}}</view> -->
+          <!-- <view class="td tr_main_num">
+            <input type="number" data-one="{{item.TNum}}" value="{{item.Num}}" placeholder="" onInput="editshopnum" />
+          </view> -->
+          <view data-itemkey="{{item.ItemKey}}" data-skukey="{{item.SkuKey}}" onTap="delSelectData" class="td">删除</view>
+        </label>
+      </checkbox-group>
+    </form>
+    
+    <!-- 已入库 -->
+    <view class="table" id="puted" a:if="{{tabs_if == 1}}">
+      <view class="thead">
+        <!-- <view class="th" formType="submit"  onTap="all_check"></view> -->
+        <view class="th" a:for="{{table_th_2}}">{{item}}</view>
+      </view>
+      <checkbox-group onChange="change_tr" class="tr_main" name="all_data">
+        <label class="tr checkbox" a:for="{{posted_data}}">
+          <!-- <checkbox class="td" value="{{item}}" style="opacity:0"/> -->
+          <view class="td">{{item.TNum}}</view>
+          <view class="td createtime">{{item.CreateTime.split(' ')[0]}}</view>
+          <view class="td">{{item.ItemKey}}</view>
+          <view class="td">{{item.Spec}}</view>
+          <!-- <view class="td">{{item.VendorKey}}</view> -->
+          <view class="td">{{item.Num}}</view>
+          <view class="td">{{item.WarehouseKey}}</view>
+        </label>
+      </checkbox-group>
+      <view style="text-align:right;padding:10px 0 0 0;">已入库总数：{{inputNum}}</view>
+    </view>
+  </view>
+
+  <!-- <view class="footer">
+    <navigator class="left" url="../Scan/Scan" redirect hover-class="className">
+      <image src="../../images/u97.png" mode="" />
+      <view>扫码</view>
+    </navigator>
+
+    <navigator class="right" url="../personal/personal" redirect hover-class="className" class="right">
+      <image src="../../images/u95.png" mode="" />
+      <view>我</view>
+    </navigator>
+  </view> -->
+</view>

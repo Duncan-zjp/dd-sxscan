@@ -1,0 +1,95 @@
+.inStorage{
+  width:100%;
+  position: relative;
+}
+.selectWarehouse_button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80rpx;
+  background-color: #fff;
+  border-bottom: 2rpx solid #f2f2f2;
+
+}
+.selectWarehouse_button view{
+  width: 80rpx;
+  height: 100%;
+  color: #419efa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20rpx;
+}
+.selectWareHouse .pickerview{
+  width: 100%;
+  background-color: #fff;
+}
+.selectWareHouse{
+  width:100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+.selectWareHouse__default{
+  color: #666;
+}
+.selectWareHouse .select{
+  height:100%;
+}
+.goodsList{
+  width:100vw;
+  height:calc(100vh - 100rpx);
+  overflow-y: scroll !important;
+  position: relative;
+}
+.goodsList .item{
+  width:1900rpx;
+  overflow:hidden;
+  padding:10rpx 0 ;
+}
+
+.goodsList .item-lock{
+  background-color: #98FB98;
+}
+.goodsList .item:first-child{
+  background:#DBDBDB;
+  position: sticky;
+  top: 0;
+}
+.goodsList .item view{
+  width:200rpx;
+  float:left;
+  text-align:center;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+.goodsList .item view:first-child{
+  width:100rpx;
+}
+.goodsList .item view:nth-child(3){
+  width:800rpx;
+}
+.btns{
+  width:100%;
+  height:100rpx;
+  line-height:100rpx;
+  font-size:32rpx;
+  position:fixed;
+  left:0;
+  bottom:0;
+  z-index:9;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.btns button{
+  width:50%;
+  height: 100%;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}

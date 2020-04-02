@@ -1,0 +1,28 @@
+<view class="orderShip">
+  <scroll-view scroll-y="{{true}}" class="orderShip__form">
+    <view class="orderShip__formItem firstItem">
+      <text class="orderShip__formItem__title">同步发货</text>
+      <switch checked="{{formData.syncSend}}" onChange="switchChange"/>
+    </view>
+    <view a:key="*this" a:for="{{formProp}}" class="{{`orderShip__formItem ${item.disabled ? 'orderShip__disabled':''}`}}"  >
+      <view class="orderShip__formItem__title">
+        <text>{{item.label}}</text>
+        <text a:if={{item.required}} style="color: red; margin-left: 10rpx;">*</text>
+      </view>
+      <input a:if="{{item.type === 'input'}}" disabled="{{item.disabled}}" class="orderShip__input" value="{{formData[item.prop]}}" type="{{item.option && item.option.type ? item.option.type : 'input'}}" onInput="bindInput" data-prop="{{item.prop}}" placeholder="{{item.label}}" />
+      <picker a:if="{{item.type === 'select'}}" disabled="{{item.disabled}}" onChange="bindPickerChange" range-key="label" data-prop="{{item.prop}}" value="{{formData[item.prop]}}" range="{{item.selectData}} ">
+        <view class="orderShip__myselect">
+         <text a:if="{{formData[item.prop] || formData[item.prop] === 0}}">{{item.selectData[formData[item.prop]].label}}</text>
+        <text class="orderShip__myselect-default" a:else>请选择{{item.label}}</text>
+        </view>
+      </picker>
+      <view class="orderShip__myselect" a:if="{{item.type === 'date'}}" data-prop="{{item.prop}}" onTap="handleDatePicker">
+        <text a:if="{{formData[item.prop] || formData[item.prop] === 0}}">{{formData[item.prop]}}</text>
+        <text class="orderShip__myselect-default" a:else>{{item.label}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="orderShip__button">
+    <button onTap="onSubmit" type="primary" disabled="{{submitLoading}}" loading="{{submitLoading}}">提交</button>
+  </view>
+</view>
